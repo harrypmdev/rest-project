@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 
 if os.path.exists('env.py'):
-    import env # noqa F401
+    import env
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
 CLOUDINARY_STORAGE = {
@@ -22,6 +22,7 @@ CLOUDINARY_STORAGE = {
 }
 
 MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
