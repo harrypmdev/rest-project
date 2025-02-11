@@ -15,11 +15,12 @@ import os
 
 if os.path.exists('env.py'):
     import env # noqa F401
+    SECRET_KEY = os.environ.get('SECRET_KEY')
 
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
-
 }
+
 MEDIA_URL = '/media/'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'profiles'
 ]
 
 MIDDLEWARE = [
