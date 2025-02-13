@@ -16,7 +16,8 @@ import dj_database_url
 
 if os.path.exists('env.py'):
     import env
-    SECRET_KEY = os.environ.get('SECRET_KEY')
+
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
