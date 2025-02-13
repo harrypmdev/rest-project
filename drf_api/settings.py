@@ -61,7 +61,10 @@ REST_AUTH_SERIALIZERS = {
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['localhost', '.herokuapp.com']
+ALLOWED_HOSTS = [
+    'localhost', 
+    os.environ.get('ALLOWED_HOST')
+]
 
 
 # Application definition
