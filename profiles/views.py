@@ -24,7 +24,8 @@ class ProfileList(generics.ListCreateAPIView):
         'owner__folowed__created_at'
     ]
     filterset_fields = [
-        'owner__following__followed__profile'
+        'owner__following__followed__profile',
+        'owner__followed__owner__profile'
     ]
 
 class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
