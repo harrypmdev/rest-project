@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import re
 from pathlib import Path
 import os
 import dj_database_url
@@ -110,9 +111,9 @@ if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS = [
         os.environ.get('CLIENT_ORIGIN')
     ]
-else:
+if 'CLIENT_ORIGIN_DEV' in os.environ:
     CORS_ALLOWED_ORIGIN_REGEXES = [
-        r"^https:\/\/.*\.codeinstitute-ide\.net$",
+         r"^https:\/\/.*\.codeinstitute-ide\.net$",
     ]
 
 ROOT_URLCONF = 'drf_api.urls'
