@@ -114,6 +114,7 @@ if 'CLIENT_ORIGIN' in os.environ:
 if 'CLIENT_ORIGIN_DEV' in os.environ:
     CORS_ALLOWED_ORIGIN_REGEXES = [
          r"^https:\/\/.*\.codeinstitute-ide\.net$",
+        os.environ.get['CLIENT_ORIGIN_DEV']
     ]
 
 ROOT_URLCONF = 'drf_api.urls'
